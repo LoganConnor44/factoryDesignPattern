@@ -1,0 +1,14 @@
+{
+ 	"circle": {
+		"circumference": 94.24,
+		"radius": 15
+	}, 
+ 	"rectangle" : {
+		"vertices": 4,
+		"opposite_sides_parallel": true
+	},
+	"square" : {
+		"all_sides_equal_length": true,
+		"opposite_sides_parallel": true
+	}
+}

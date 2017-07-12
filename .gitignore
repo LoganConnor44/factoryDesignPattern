@@ -1,0 +1,5 @@
+# Composer Files
+vendor/*
+
+# PHP Intellicense
+.phpintel/*
