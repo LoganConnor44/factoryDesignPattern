@@ -2,12 +2,23 @@
 use FactoryMethodPattern\ShapeFactory;
 
 class FactoryTest extends \PHPUnit_Framework_TestCase {
+
+	/**
+	 * The fixture configuration for various shapes
+	 * @var array
+	 */
 	protected $fixturePath;
 
+	/**
+	 * Set the $fixturePath before every test executes
+	 */
 	public function setUp() {
 		$this->fixturePath = json_decode(file_get_contents(dirname(realpath(dirname(__FILE__))) . '/definitions/shapes.json'), TRUE);
 	}
 
+	/**
+	 * Verify that each object is being instantiated correctly
+	 */
 	public function testIsObject() {
 		$FactoryObject = new ShapeFactory();
 		$this->assertTrue(is_object($FactoryObject));
@@ -22,6 +33,9 @@ class FactoryTest extends \PHPUnit_Framework_TestCase {
 		$this->assertTrue(is_object($Square));
 	}
 
+	/**
+	 * Verify that the objects created are of the correct instance
+	 */
 	public function testIsSpecifiedObject() {
 		$FactoryObject = new ShapeFactory();
 		$this->assertTrue($FactoryObject instanceof ShapeFactory);
@@ -36,6 +50,9 @@ class FactoryTest extends \PHPUnit_Framework_TestCase {
 		$this->assertTrue($Square instanceof FactoryMethodPattern\Square);
 	}
 
+	/**
+	 * Verify that the object variables/properties are being set correctly
+	 */
 	public function testObjectVariables() {
 		$Circle = ShapeFactory::getShape("CIRCLE");
 		$Circle->setVariables($this->fixturePath);
@@ -48,5 +65,23 @@ class FactoryTest extends \PHPUnit_Framework_TestCase {
 		$Square = ShapeFactory::getShape("square");
 		$Square->setVariables($this->fixturePath);
 		$this->assertEquals(true, $Square->getOppositeSidesParallel());
+	}
+
+	/**
+	 * Verify that the shapes that are being requested have a corresponding class
+	 */
+	public function testFindValidShapes() {
+		$aTrueValue = ShapeFactory::isGivenShapeValid('Circle');
+		$this->assertTrue($aTrueValue);
+
+		$aFalseValue = ShapeFactory::isGivenShapeValid('not-a-shape');
+		$this->assertFalse($aFalseValue);
+	}
+
+	/**
+	 * @expectedException \Exception
+	 */
+	public function testFactoryException() {
+		ShapeFactory::getShape('not-a-shape');
 	}
 }

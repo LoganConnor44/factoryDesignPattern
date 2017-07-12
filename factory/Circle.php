@@ -28,12 +28,4 @@ class Circle extends Shape {
 		$this->circumference = $variables['circle']['circumference'];
 		$this->radius = $variables['circle']['radius'];
 	}
-
-	public function getName(): string {
-		return $this->name;
-	}
-
-	public function draw() {
-		echo "Inside Circle::draw() method.";
-	}
 }
