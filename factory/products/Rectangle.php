@@ -1,0 +1,39 @@
+<?php 
+namespace Factory\Products;
+
+/**
+ * A Rectangle class that inherits from the Shape abstract class
+ */
+class Rectangle extends Shape {
+
+	/**
+	 * An integer of Rectangle's vertices
+	 * @var int
+	 */
+	public $vertices;
+
+	/**
+	 * A boolean value if the opposite sides are parallel
+	 * @var bool
+	 */
+	public $oppositeSidesParallel;
+
+	/**
+	 * Sets the available variables for Rectangle
+	 * @param array $variables
+	 * @return null
+	 */
+	public function setVariables(array $variables) {
+		$this->name = 'Rectangle';
+		$this->vertices = $variables['rectangle']['vertices'];
+		$this->oppositeSidesParallel = $variables['rectangle']['opposite_sides_parallel'];
+	}
+
+	/**
+	 * Returns the protected variable $name
+	 * @return string $name
+	 */
+	public function getOppositeSidesParallel(): string {
+		return $this->oppositeSidesParallel;
+	}
+}

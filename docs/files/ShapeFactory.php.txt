@@ -1,10 +1,5 @@
 <?php 
-namespace Factory;
-
-use Factory\Products\Shape;
-use Factory\Products\Circle;
-use Factory\Products\Rectangle;
-use Factory\Products\Square;
+namespace FactoryMethodPattern;
 
 /**
  * A factory class which holds the logic of which 'product' (or specific shape) to return
@@ -43,7 +38,7 @@ class ShapeFactory {
 	 * @return bool
 	 */
 	public static function isGivenShapeValid(string $shapeType): bool {
-		$directory = dirname(realpath(dirname(__FILE__))) .'/factory/products/';
+		$directory = dirname(realpath(dirname(__FILE__))) .'/factory';
 		//array_diff() removes the dots that this function picks up
 		$availableShapeObjects = array_diff(scandir($directory), array('..', '.'));
 		$shapeType = strtoupper($shapeType);

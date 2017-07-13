@@ -1,5 +1,5 @@
 <?php
-use FactoryMethodPattern\ShapeFactory;
+use Factory\ShapeFactory;
 
 class FactoryTest extends \PHPUnit_Framework_TestCase {
 
@@ -13,7 +13,7 @@ class FactoryTest extends \PHPUnit_Framework_TestCase {
 	 * Set the $fixturePath before every test executes
 	 */
 	public function setUp() {
-		$this->fixturePath = json_decode(file_get_contents(dirname(realpath(dirname(__FILE__))) . '/definitions/shapes.json'), TRUE);
+		$this->fixturePath = json_decode(file_get_contents(dirname(realpath(dirname(__FILE__))) . '/factory/definitions/shapes.json'), TRUE);
 	}
 
 	/**
@@ -38,16 +38,16 @@ class FactoryTest extends \PHPUnit_Framework_TestCase {
 	 */
 	public function testIsSpecifiedObject() {
 		$FactoryObject = new ShapeFactory();
-		$this->assertTrue($FactoryObject instanceof ShapeFactory);
+		$this->assertTrue($FactoryObject instanceof Factory\ShapeFactory);
 
 		$Circle = ShapeFactory::getShape("CIRCLE");
-		$this->assertTrue($Circle instanceof FactoryMethodPattern\Circle);
+		$this->assertTrue($Circle instanceof Factory\Products\Circle);
 
 		$Rectangle = ShapeFactory::getShape("Rectangle");
-		$this->assertTrue($Rectangle instanceof FactoryMethodPattern\Rectangle);
+		$this->assertTrue($Rectangle instanceof Factory\Products\Rectangle);
 
 		$Square = ShapeFactory::getShape("square");
-		$this->assertTrue($Square instanceof FactoryMethodPattern\Square);
+		$this->assertTrue($Square instanceof Factory\Products\Square);
 	}
 
 	/**

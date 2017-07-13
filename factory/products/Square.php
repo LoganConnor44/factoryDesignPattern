@@ -1,16 +1,16 @@
 <?php 
-namespace FactoryMethodPattern;
+namespace Factory\Products;
 
 /**
- * A Rectangle class that inherits from the Shape abstract class
+ * A Square class that inherits from the Shape abstract class
  */
-class Rectangle extends Shape {
+class Square extends Shape {
 
 	/**
-	 * An integer of Rectangle's vertices
-	 * @var int
+	 * A boolean value if all sides are of equal length
+	 * @var bool
 	 */
-	public $vertices;
+	public $allSidesEqualLength;
 
 	/**
 	 * A boolean value if the opposite sides are parallel
@@ -24,9 +24,9 @@ class Rectangle extends Shape {
 	 * @return null
 	 */
 	public function setVariables(array $variables) {
-		$this->name = 'Rectangle';
-		$this->vertices = $variables['rectangle']['vertices'];
-		$this->oppositeSidesParallel = $variables['rectangle']['opposite_sides_parallel'];
+		$this->name = 'Square';
+		$this->allSidesEqualLength = $variables['square']['all_sides_equal_length'];
+		$this->oppositeSidesParallel = $variables['square']['opposite_sides_parallel'];
 	}
 
 	/**
