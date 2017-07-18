@@ -1,5 +1,8 @@
 <?php
-use Factory\ShapeFactory;
+
+use AbstractFactoryTutorial\Factory\AbstractFactory;
+use AbstractFactoryTutorial\Factory\FactoryProducer;
+
 
 class FactoryTest extends \PHPUnit_Framework_TestCase {
 
@@ -13,56 +16,56 @@ class FactoryTest extends \PHPUnit_Framework_TestCase {
 	 * Set the $fixturePath before every test executes
 	 */
 	public function setUp() {
-		$this->fixturePath = json_decode(file_get_contents(dirname(realpath(dirname(__FILE__))) . '/factory/definitions/shapes.json'), TRUE);
+		$this->fixturePath = json_decode(file_get_contents(dirname(realpath(dirname(__FILE__))) . '/src/definitions/shapes.json'), TRUE);
 	}
 
 	/**
 	 * Verify that each object is being instantiated correctly
 	 */
 	public function testIsObject() {
-		$FactoryObject = new ShapeFactory();
+		$FactoryObject = new FactoryProducer('circle');
 		$this->assertTrue(is_object($FactoryObject));
 
-		$Circle = ShapeFactory::getShape("CIRCLE");
-		$this->assertTrue(is_object($Circle));
+		$NonPolygonFactory = FactoryProducer::getFactory('circle');
+		$this->assertTrue(is_object($NonPolygonFactory));
 
-		$Rectangle = ShapeFactory::getShape("Rectangle");
-		$this->assertTrue(is_object($Rectangle));
-		
-		$Square = ShapeFactory::getShape("square");
-		$this->assertTrue(is_object($Square));
+		$PolygonFactory = FactoryProducer::getFactory('square');
+		$this->assertTrue(is_object($PolygonFactory));
 	}
 
 	/**
 	 * Verify that the objects created are of the correct instance
 	 */
 	public function testIsSpecifiedObject() {
-		$FactoryObject = new ShapeFactory();
-		$this->assertTrue($FactoryObject instanceof Factory\ShapeFactory);
+		$FactoryObject = new FactoryProducer('circle');
+		$this->assertTrue($FactoryObject instanceof AbstractFactoryTutorial\Factory\FactoryProducer);
 
-		$Circle = ShapeFactory::getShape("CIRCLE");
-		$this->assertTrue($Circle instanceof Factory\Products\Circle);
+		$CircleFactory = FactoryProducer::getFactory("CIRCLE");
+		$this->assertTrue($CircleFactory instanceof AbstractFactoryTutorial\Factory\NonPolygonFactory);
 
-		$Rectangle = ShapeFactory::getShape("Rectangle");
-		$this->assertTrue($Rectangle instanceof Factory\Products\Rectangle);
+		$RectangleFactory = FactoryProducer::getFactory("Rectangle");
+		$this->assertTrue($RectangleFactory instanceof AbstractFactoryTutorial\Factory\PolygonFactory);
 
-		$Square = ShapeFactory::getShape("square");
-		$this->assertTrue($Square instanceof Factory\Products\Square);
+		$SquareFactory = FactoryProducer::getFactory("square");
+		$this->assertTrue($SquareFactory instanceof AbstractFactoryTutorial\Factory\PolygonFactory);
 	}
 
 	/**
 	 * Verify that the object variables/properties are being set correctly
 	 */
 	public function testObjectVariables() {
-		$Circle = ShapeFactory::getShape("CIRCLE");
+		$CircleFactory = FactoryProducer::getFactory("CIRCLE");
+		$Circle = $CircleFactory->getShape();
 		$Circle->setVariables($this->fixturePath);
 		$this->assertEquals('CIRCLE', strtoupper($Circle->getName()));
 
-		$Rectangle = ShapeFactory::getShape("Rectangle");
+		$RectangleFactory = FactoryProducer::getFactory("Rectangle");
+		$Rectangle = $RectangleFactory->getShape();
 		$Rectangle->setVariables($this->fixturePath);
 		$this->assertEquals(true, $Rectangle->getOppositeSidesParallel());
 
-		$Square = ShapeFactory::getShape("square");
+		$SquareFactory = FactoryProducer::getFactory("square");
+		$Square = $SquareFactory->getShape();
 		$Square->setVariables($this->fixturePath);
 		$this->assertEquals(true, $Square->getOppositeSidesParallel());
 	}
@@ -71,17 +74,28 @@ class FactoryTest extends \PHPUnit_Framework_TestCase {
 	 * Verify that the shapes that are being requested have a corresponding class
 	 */
 	public function testFindValidShapes() {
-		$aTrueValue = ShapeFactory::isGivenShapeValid('Circle');
+		$aTrueValue = AbstractFactory::isGivenShapeValid('Circle');
 		$this->assertTrue($aTrueValue);
 
-		$aFalseValue = ShapeFactory::isGivenShapeValid('not-a-shape');
+		$aFalseValue = AbstractFactory::isGivenShapeValid('not-a-shape');
+		$this->assertFalse($aFalseValue);
+	}
+
+	/**
+	 * Verify that the factories that are being requested have a corresponding class
+	 */
+	public function testFindValidFactories() {
+		$aTrueValue = AbstractFactory::isGivenFactoryValid('PolygonFactory');
+		$this->assertTrue($aTrueValue);
+
+		$aFalseValue = AbstractFactory::isGivenFactoryValid('not-a-factory');
 		$this->assertFalse($aFalseValue);
 	}
 
 	/**
 	 * @expectedException \Exception
 	 */
-	public function testFactoryException() {
-		ShapeFactory::getShape('not-a-shape');
+	public function testShapeException() {
+		$Producer = new FactoryProducer('not-a-shape');
 	}
 }

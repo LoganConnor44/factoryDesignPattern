@@ -1,5 +1,5 @@
 <?php 
-namespace Factory\Products;
+namespace AbstractFactoryTutorial\Products;
 
 /**
  * A Circle class that inherits from the Shape abstract class

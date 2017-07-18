@@ -1,5 +1,5 @@
 <?php 
-namespace Factory\Products;
+namespace AbstractFactoryTutorial\Products;
 
 /**
  * Super class that all shapes will inherit from.

@@ -4,8 +4,9 @@
 	"type": "project",
 	"autoload": {
 		"psr-4": {
-			"Factory\\" : "factory/",
-			"Factory\\Products\\" : "factory/products/"
+			"AbstractFactoryTutorial\\" : "src/",
+			"AbstractFactoryTutorial\\Factory\\" : "src/factories/",
+			"AbstractFactoryTutorial\\Products\\" : "src/products/"
 		}
 	},
 	"require-dev": {
