@@ -12,11 +12,6 @@ abstract class AbstractFactory {
 	 */
 	protected $shapeName;
 
-	/**
-	 * This constructor is called when a specific shape factory is instantiated and sets the protected $shapeName if it is a valid shape
-	 * @param string $shape
-	 * @return void
-	 */
 	public function __construct(string $shape) {
 		$shape = strtoupper($shape);
 		try {
@@ -28,7 +23,6 @@ abstract class AbstractFactory {
 		} catch (Exception $e) {
 			echo "Exception Caught: ", $e->getMessage(), "\n";
 		}
-		$this->shapeName = $shape;
 	}
 
 	/**
