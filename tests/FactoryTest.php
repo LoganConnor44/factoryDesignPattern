@@ -77,6 +77,9 @@ class FactoryTest extends \PHPUnit_Framework_TestCase {
 		$aTrueValue = AbstractFactory::isGivenShapeValid('Circle');
 		$this->assertTrue($aTrueValue);
 
+		$aTrueValue = AbstractFactory::isGivenShapeValid('Ellipse');
+		$this->assertTrue($aTrueValue);
+
 		$aFalseValue = AbstractFactory::isGivenShapeValid('not-a-shape');
 		$this->assertFalse($aFalseValue);
 	}

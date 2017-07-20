@@ -21,7 +21,6 @@ class FactoryProducer extends AbstractFactory {
 	public static function getFactory(string $shapeType) : AbstractFactory {
 		$nonPolygons = array(
 			'CIRCLE',
-			'OVAL',
 			'ELLIPSE'
 		);
 		$polygons = array(

@@ -1,7 +1,11 @@
 {
+	"ellipse": {
+		"fociCoincide": true,
+		"eccentricity": 1
+	},
  	"circle": {
-		"circumference": 94.24,
-		"radius": 15
+		"fociCoincide": true,
+		"eccentricity": 1
 	}, 
  	"rectangle" : {
 		"vertices": 4,

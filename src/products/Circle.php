@@ -2,21 +2,9 @@
 namespace AbstractFactoryTutorial\Products;
 
 /**
- * A Circle class that inherits from the Shape abstract class
+ * A Circle class that inherits from the Ellipse class
  */
-class Circle extends Shape {
-
-	/**
-	 * An integer of the Circle's circumference
-	 * @var int
-	 */
-	protected $circumference;
-
-	/**
-	 * An integer of the Circle's radius
-	 * @var int
-	 */
-	protected $radius;
+class Circle extends Ellipse {
 
 	/**
 	 * Sets the available variables for Circle
@@ -25,7 +13,7 @@ class Circle extends Shape {
 	 */
 	public function setVariables(array $variables) {
 		$this->name = 'Circle';
-		$this->circumference = $variables['circle']['circumference'];
-		$this->radius = $variables['circle']['radius'];
+		$this->fociCoincide = $variables['circle']['fociCoincide'];
+		$this->eccentricity = $variables['circle']['eccentricity'];
 	}
 }
