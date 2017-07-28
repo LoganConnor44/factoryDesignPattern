@@ -61,9 +61,14 @@ abstract class AbstractFactory {
 	 * @return string
 	 */
 	public static function getExpectedFactoryFromShape(string $shape) : string {
+		$definitions = self::getDefinitions();
+		return array_search($shape, $definitions);
+	}
+
+	public static function getDefinitions() : array {
 		$directory = dirname(realpath(dirname(__FILE__))) .'/definitions';
 		$definitions = json_decode(file_get_contents($directory . DIRECTORY_SEPARATOR . 'shapes.json'), TRUE);
-		return array_search($shape, $definitions);
+		return $definitions;
 	}
 
 	/**

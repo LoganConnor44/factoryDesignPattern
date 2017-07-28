@@ -13,11 +13,11 @@ class FactoryProducer extends AbstractFactory {
 	 * 
 	 * When $typeAvailable is being defined we are substracting 1 from $numberOfKey because we need to account for zero-indexing
 	 * @param string $shapeType
-	 * @param array $shapeDefinitions
 	 * @throws Exception
 	 */
-	public static function getFactory(string $shapeType, array $shapeDefinitions) : AbstractFactory {
+	public static function getFactory(string $shapeType) : AbstractFactory {
 		try {
+			$shapeDefinitions = AbstractFactory::getDefinitions();
 			$validShape = AbstractFactory::isGivenShapeValid($shapeType);
 			$expectedFactory = AbstractFactory::getExpectedFactoryFromShape($shapeType);
 			$validFactory = AbstractFactory::isGivenFactoryValid($expectedFactory);
