@@ -4,36 +4,11 @@ namespace AbstractFactoryTutorial\Products;
 /**
  * A Square class that inherits from the Shape abstract class
  */
-class Square extends Shape {
+class Square extends Polygon {
 
 	/**
-	 * A boolean value if all sides are of equal length
-	 * @var bool
-	 */
-	public $allSidesEqualLength;
-
-	/**
-	 * A boolean value if the opposite sides are parallel
-	 * @var bool
-	 */
-	public $oppositeSidesParallel;
-
-	/**
-	 * Sets the available variables for Rectangle
-	 * @param array $variables
-	 * @return null
-	 */
-	public function setVariables(array $variables) {
-		$this->name = 'Square';
-		$this->allSidesEqualLength = $variables['square']['all_sides_equal_length'];
-		$this->oppositeSidesParallel = $variables['square']['opposite_sides_parallel'];
-	}
-
-	/**
-	 * Returns the protected variable $name
-	 * @return string $name
-	 */
-	public function getOppositeSidesParallel(): string {
-		return $this->oppositeSidesParallel;
+	 * 
+	public function __construct(array $config) {
+		parent::__construct($config);
 	}
 }

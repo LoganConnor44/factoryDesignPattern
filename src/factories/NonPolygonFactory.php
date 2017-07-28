@@ -2,20 +2,23 @@
 namespace AbstractFactoryTutorial\Factory;
 
 use AbstractFactoryTutorial\Products\Shape;
+use AbstractFactoryTutorial\Products\Ellipse;
 use AbstractFactoryTutorial\Products\Circle;
 
 /**
- * A factory class which holds the logic for any NonPolygon Shape objects that need to be created
+ * A factory class which holds the logic for any NonPolygon shape objects that need to be created
  */
 class NonPolygonFactory extends AbstractFactory {
 
 	/**
-	 * Calls the AbstractFactory constructor to verify that shape is valid
-	 * @param string $shape
+	 * Calls the AbstractFactory constructor to verify that shape is valid and factory is 
+	 * @param string $config
 	 * @return void
 	 */
-	public function __construct(string $shape) {
-		parent::__construct($shape);
+	public function __construct(array $config) {
+		$nameOfShape = key($config);
+		parent::__construct($nameOfShape);
+		$this->shapeConfig = $config;
 	}
 
 	/**
@@ -24,12 +27,12 @@ class NonPolygonFactory extends AbstractFactory {
 	 */
 	public function getShape() : Shape {
 		switch ($this->shapeName) {
-			case "CIRCLE" :
-				return new Circle();
-			case "ELLIPSE" :
-				return new Ellipse();
-			case "OVAL" :
-				return new Oval();
+			case "circle" :
+				return new Circle($this->shapeConfig);
+			case "ellipse" :
+				return new Ellipse($this->shapeConfig);
+			case "oval" :
+				return new Oval($this->shapeConfig);
 		}
 	}
 }

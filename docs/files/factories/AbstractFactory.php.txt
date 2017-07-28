@@ -2,9 +2,15 @@
 namespace AbstractFactoryTutorial\Factory;
 
 /**
- * Abstract class that all Factory classes will inherit from
+ * The top most parent Abstract class for all factory classes
  */
 abstract class AbstractFactory {
+
+	/**
+	 * The locally stored definitions data for all available shapes
+	 * @var array
+	 */
+	protected $shapeDefinitions;
 
 	/**
 	 * Name of the shape that will be produced
@@ -12,17 +18,20 @@ abstract class AbstractFactory {
 	 */
 	protected $shapeName;
 
-	public function __construct(string $shape) {
-		$shape = strtoupper($shape);
-		try {
-			$validShape = $this->isGivenShapeValid($shape);
+	/**
+	 * The configurations of the shape to be created
+	 * @var array
+	 */
+	protected $shapeConfig;
 
-			if (!$validShape) {
-				throw new \Exception("Shape given does not have a corresponding class defined.");
-			}
-		} catch (Exception $e) {
-			echo "Exception Caught: ", $e->getMessage(), "\n";
-		}
+	/**
+	 * This constructor is called when a specific shape factory is instantiated and sets the protected $shapeName if it is a valid shape
+	 * @param string $shape
+	 * @return void
+	 */
+	public function __construct(string $shape) {
+		$shape = strtolower($shape);
+		$this->shapeName = $shape;
 	}
 
 	/**
@@ -34,16 +43,27 @@ abstract class AbstractFactory {
 		$directory = dirname(realpath(dirname(__FILE__))) .'/products';
 		//array_diff() removes the dots that this function picks up
 		$availableShapeObjects = array_diff(scandir($directory), array('..', '.'));
-		$shapeType = strtoupper($shapeType);
+		$shapeType = strtolower($shapeType);
 
 		foreach($availableShapeObjects as $index => &$shape) {
-			$shape = strtoupper(strrev(substr(strrev($shape), 4)));
+			$shape = strtolower(strrev(substr(strrev($shape), 4)));
 		}
 
 		if (!in_array($shapeType, $availableShapeObjects)) {
 			return FALSE;
 		}
 		return TRUE;
+	}
+
+	/**
+	 * Reads the definitions file that is stored locally and searches for the key (factory name) that is associated with an individual shape
+	 * @param string $shape
+	 * @return string
+	 */
+	public static function getExpectedFactoryFromShape(string $shape) : string {
+		$directory = dirname(realpath(dirname(__FILE__))) .'/definitions';
+		$definitions = json_decode(file_get_contents($directory . DIRECTORY_SEPARATOR . 'shapes.json'), TRUE);
+		return array_search($shape, $definitions);
 	}
 
 	/**
@@ -55,10 +75,10 @@ abstract class AbstractFactory {
 		$directory = dirname(realpath(dirname(__FILE__))) .'/factories';
 		//array_diff() removes the dots that this function picks up
 		$availableFactoryObjects = array_diff(scandir($directory), array('..', '.'));
-		$factoryType = strtoupper($factoryType);
+		$factoryType = strtolower($factoryType);
 
 		foreach($availableFactoryObjects as $index => &$factory) {
-			$factory = strtoupper(strrev(substr(strrev($factory), 4)));
+			$factory = strtolower(strrev(substr(strrev($factory), 4)));
 		}
 
 		if (!in_array($factoryType, $availableFactoryObjects)) {

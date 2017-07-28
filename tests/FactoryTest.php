@@ -3,7 +3,6 @@
 use AbstractFactoryTutorial\Factory\AbstractFactory;
 use AbstractFactoryTutorial\Factory\FactoryProducer;
 
-
 class FactoryTest extends \PHPUnit_Framework_TestCase {
 
 	/**
@@ -23,13 +22,10 @@ class FactoryTest extends \PHPUnit_Framework_TestCase {
 	 * Verify that each object is being instantiated correctly
 	 */
 	public function testIsObject() {
-		$FactoryObject = new FactoryProducer('circle');
-		$this->assertTrue(is_object($FactoryObject));
-
-		$NonPolygonFactory = FactoryProducer::getFactory('circle');
+		$NonPolygonFactory = FactoryProducer::getFactory("circle", $this->fixturePath);
 		$this->assertTrue(is_object($NonPolygonFactory));
 
-		$PolygonFactory = FactoryProducer::getFactory('square');
+		$PolygonFactory = FactoryProducer::getFactory('square', $this->fixturePath);
 		$this->assertTrue(is_object($PolygonFactory));
 	}
 
@@ -37,16 +33,13 @@ class FactoryTest extends \PHPUnit_Framework_TestCase {
 	 * Verify that the objects created are of the correct instance
 	 */
 	public function testIsSpecifiedObject() {
-		$FactoryObject = new FactoryProducer('circle');
-		$this->assertTrue($FactoryObject instanceof AbstractFactoryTutorial\Factory\FactoryProducer);
-
-		$CircleFactory = FactoryProducer::getFactory("CIRCLE");
+		$CircleFactory = FactoryProducer::getFactory("circle", $this->fixturePath);
 		$this->assertTrue($CircleFactory instanceof AbstractFactoryTutorial\Factory\NonPolygonFactory);
 
-		$RectangleFactory = FactoryProducer::getFactory("Rectangle");
+		$RectangleFactory = FactoryProducer::getFactory("Rectangle", $this->fixturePath);
 		$this->assertTrue($RectangleFactory instanceof AbstractFactoryTutorial\Factory\PolygonFactory);
 
-		$SquareFactory = FactoryProducer::getFactory("square");
+		$SquareFactory = FactoryProducer::getFactory("square", $this->fixturePath);
 		$this->assertTrue($SquareFactory instanceof AbstractFactoryTutorial\Factory\PolygonFactory);
 	}
 
@@ -54,20 +47,24 @@ class FactoryTest extends \PHPUnit_Framework_TestCase {
 	 * Verify that the object variables/properties are being set correctly
 	 */
 	public function testObjectVariables() {
-		$CircleFactory = FactoryProducer::getFactory("CIRCLE");
+		$CircleFactory = FactoryProducer::getFactory("CIRCLE", $this->fixturePath);
 		$Circle = $CircleFactory->getShape();
-		$Circle->setVariables($this->fixturePath);
 		$this->assertEquals('CIRCLE', strtoupper($Circle->getName()));
+		$this->assertEquals(1, $Circle->getEccentricity());
+		$this->assertEquals(25, $Circle->getDummyValue());
 
-		$RectangleFactory = FactoryProducer::getFactory("Rectangle");
+		$RectangleFactory = FactoryProducer::getFactory("Rectangle", $this->fixturePath);
 		$Rectangle = $RectangleFactory->getShape();
-		$Rectangle->setVariables($this->fixturePath);
 		$this->assertEquals(true, $Rectangle->getOppositeSidesParallel());
 
-		$SquareFactory = FactoryProducer::getFactory("square");
-		$Square = $SquareFactory->getShape();
-		$Square->setVariables($this->fixturePath);
-		$this->assertEquals(true, $Square->getOppositeSidesParallel());
+		//square class not yet defined
+		// $SquareFactory = FactoryProducer::getFactory("square", $this->fixturePath);
+		// $Square = $SquareFactory->getShape();
+		// $this->assertEquals(true, $Square->getOppositeSidesParallel());
+
+		$TriangleFactory = FactoryProducer::getFactory("triangle", $this->fixturePath);
+		$Triangle = $TriangleFactory->getShape();
+	$this->assertEquals(3, $Triangle->getNumberOfAngles());
 	}
 
 	/**
@@ -99,6 +96,6 @@ class FactoryTest extends \PHPUnit_Framework_TestCase {
 	 * @expectedException \Exception
 	 */
 	public function testShapeException() {
-		$Producer = new FactoryProducer('not-a-shape');
+		$RectangleFactory = FactoryProducer::getFactory("not-a-shape", $this->fixturePath);
 	}
 }

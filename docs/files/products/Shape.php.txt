@@ -13,6 +13,26 @@ abstract class Shape {
 	protected $name;
 
 	/**
+	 * Takes in the name of the intended shape and sets it to the object variable $name
+	 * @param string $nameOfShape
+	 */
+	public function __construct(string $nameOfShape) {
+		$this->name = $nameOfShape;
+	}
+
+	/**
+	 * Recursively goes through an array and if a variable is undefined it dynamically defines it based on the passed $config $value
+	 * @param array $config
+	 */
+	public function setVariables(array $config) {
+		array_walk_recursive($config, function($value, $key) {
+			if (empty($this->$key)) {
+				$this->$key = $value;
+			}
+		} );
+	}
+
+	/**
 	 * Returns the protected variable $name
 	 * @return string $name
 	 */

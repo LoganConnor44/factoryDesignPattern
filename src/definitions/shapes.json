@@ -1,18 +1,31 @@
 {
-	"ellipse": {
-		"fociCoincide": true,
-		"eccentricity": 1
+	"NonPolygon" : {
+		"ellipse": {
+			"fociCoincide": true,
+			"eccentricity": 0.35
+		},
+	 	"circle": {
+			"fociCoincide": true,
+			"eccentricity": 1,
+			"dummyValue" :25
+		}
 	},
- 	"circle": {
-		"fociCoincide": true,
-		"eccentricity": 1
-	}, 
- 	"rectangle" : {
-		"vertices": 4,
-		"opposite_sides_parallel": true
-	},
-	"square" : {
-		"all_sides_equal_length": true,
-		"opposite_sides_parallel": true
-	}
+	"Polygon" : {
+		"rectangle" : {
+			"vertices": 4,
+			"allSidesEqualLength": false,
+			"oppositeSidesParallel": true
+		},
+		"square" : {
+			"vertices": 4,
+			"allSidesEqualLength": true,
+			"oppositeSidesParallel": true
+		},
+		"triangle" : {
+			"vertices": 3,
+			"allSidesEqualLength" : true,
+			"angles": 3,
+			"edges": 3
+		}
+	} 	
 }

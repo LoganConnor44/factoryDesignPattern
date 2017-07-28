@@ -4,36 +4,13 @@ namespace AbstractFactoryTutorial\Products;
 /**
  * A Rectangle class that inherits from the Shape abstract class
  */
-class Rectangle extends Shape {
+class Rectangle extends Polygon {
 
 	/**
-	 * An integer of Rectangle's vertices
-	 * @var int
+	 * Takes the configuration for a rectangle and passes it to the parent constructor
+	 * @param array $config
 	 */
-	public $vertices;
-
-	/**
-	 * A boolean value if the opposite sides are parallel
-	 * @var bool
-	 */
-	public $oppositeSidesParallel;
-
-	/**
-	 * Sets the available variables for Rectangle
-	 * @param array $variables
-	 * @return null
-	 */
-	public function setVariables(array $variables) {
-		$this->name = 'Rectangle';
-		$this->vertices = $variables['rectangle']['vertices'];
-		$this->oppositeSidesParallel = $variables['rectangle']['opposite_sides_parallel'];
-	}
-
-	/**
-	 * Returns the protected variable $name
-	 * @return string $name
-	 */
-	public function getOppositeSidesParallel(): string {
-		return $this->oppositeSidesParallel;
+	public function __construct(array $config) {
+		parent::__construct($config);
 	}
 }

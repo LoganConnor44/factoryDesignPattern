@@ -4,19 +4,22 @@ namespace AbstractFactoryTutorial\Factory;
 use AbstractFactoryTutorial\Products\Shape;
 use AbstractFactoryTutorial\Products\Rectangle;
 use AbstractFactoryTutorial\Products\Square;
+use AbstractFactoryTutorial\Products\Triangle;
 
 /**
- * A factory class which holds the logic for any Polygon Shape objects that need to be created
+ * A factory class which holds the logic for any Polygon shape objects that need to be created
  */
 class PolygonFactory extends AbstractFactory {
 
 	/**
 	 * Calls the AbstractFactory constructor to verify that shape is valid
-	 * @param string $shape
+	 * @param array $config
 	 * @return void
 	 */
-	public function __construct(string $shape) {
-		parent::__construct($shape);
+	public function __construct(array $config) {
+		$nameOfShape = key($config);
+		parent::__construct($nameOfShape);
+		$this->shapeConfig = $config;
 	}
 
 	/**
@@ -25,12 +28,12 @@ class PolygonFactory extends AbstractFactory {
 	 */
 	public function getShape() : Shape {
 		switch ($this->shapeName) {
-			case "RECTANGLE" :
-				return new Rectangle();
-			case "SQUARE" :
-				return new Square();
-			case "TRIANGLE" :
-				return new Triangle();
+			case "rectangle" :
+				return new Rectangle($this->shapeConfig);
+			case "square" :
+				return new Square($this->shapeConfig);
+			case "triangle" :
+				return new Triangle($this->shapeConfig);
 		}
 	}
 }

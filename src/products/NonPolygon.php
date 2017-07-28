@@ -1,0 +1,30 @@
+<?php 
+namespace AbstractFactoryTutorial\Products;
+
+/**
+ * A Circle class that inherits from the Ellipse class
+ */
+abstract class NonPolygon extends Shape {
+
+	/**
+	 * Boolean value if the foci coincides
+	 * @var bool
+	 */
+	protected $fociCoincide;
+
+	/**
+	 * Integer value of the shape's eccentricity
+	 * @var int
+	 */
+	protected $eccentricity;
+
+	/**
+	 * Takes in the configuration, passes the shape name to the object variable $nameOfShape, passes that $nameOfShape to the parent constructor, and sets necessary variables for the intended shape 
+	 * @param array $config
+	 */
+	public function __construct(array $config) {
+		$nameOfShape = key($config);
+		parent::__construct($nameOfShape);
+		$this->setVariables($config);
+	}
+}

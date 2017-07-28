@@ -4,37 +4,44 @@ namespace AbstractFactoryTutorial\Factory;
 use AbstractFactoryTutorial\Factory\AbstractFactory;
 
 /**
- * A factory class which holds the logic of which 'product' (or specific shape) to return
+ * A factory class which holds the logic of which factory needs to be instaniated for the desired product
  */
 class FactoryProducer extends AbstractFactory {
 
-	public function __construct(string $shape) {
-		parent::__construct($shape);
-		$this->shapeName = $shape;
-	}
-
 	/**
-	 * Takes in a $shapeType and if it is an expected type is will return the appropriate object
+	 * Takes in a $shapeType and if it is an expected type is will return the appropriate factory object
+	 * 
+	 * When $typeAvailable is being defined we are substracting 1 from $numberOfKey because we need to account for zero-indexing
 	 * @param string $shapeType
-	 * @return object Shape | null 
+	 * @param array $shapeDefinitions
+	 * @throws Exception
 	 */
-	public static function getFactory(string $shapeType) : AbstractFactory {
-		$nonPolygons = array(
-			'CIRCLE',
-			'ELLIPSE'
-		);
-		$polygons = array(
-			'RECTANGLE',
-			'SQUARE',
-			'TRIANGLE'
-		);
-		
-		$shapeType = strtoupper($shapeType);
-		if (in_array($shapeType, $nonPolygons)) {
-			return new NonPolygonFactory($shapeType);
+	public static function getFactory(string $shapeType, array $shapeDefinitions) : AbstractFactory {
+		try {
+			$validShape = AbstractFactory::isGivenShapeValid($shapeType);
+			$expectedFactory = AbstractFactory::getExpectedFactoryFromShape($shapeType);
+			$validFactory = AbstractFactory::isGivenFactoryValid($expectedFactory);
+
+			if (!$validShape && !$validFactory) {
+				throw new \Exception("Shape given does not have a corresponding class defined.");
+			}
+		} catch (Exception $e) {
+			echo "Exception Caught: ", $e->getMessage(), "\n";
 		}
-		if (in_array($shapeType, $polygons)) {
-			return new PolygonFactory($shapeType);
+		$availableTypes = array_keys($shapeDefinitions);
+		$numberOfKeys = count($availableTypes);
+		while ($numberOfKeys > 0) {
+			$typeAvailable = $availableTypes[$numberOfKeys - 1];
+			
+			$shapeType = strtolower($shapeType);
+			if (array_key_exists($shapeType, $shapeDefinitions[$typeAvailable])) {
+				$shapeConfig = array(
+					$shapeType => $shapeDefinitions[$typeAvailable][$shapeType]
+				);
+				$factoryClass = 'AbstractFactoryTutorial\\Factory\\' . $typeAvailable . 'Factory';
+				return new $factoryClass($shapeConfig);
+			}
+			$numberOfKeys--;
 		}
 	}
 }

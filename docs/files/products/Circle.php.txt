@@ -2,30 +2,35 @@
 namespace AbstractFactoryTutorial\Products;
 
 /**
- * A Circle class that inherits from the Shape abstract class
+ * A Circle class that inherits from the Ellipse class
  */
-class Circle extends Shape {
+class Circle extends Ellipse {
 
 	/**
-	 * An integer of the Circle's circumference
+	 * A false value for showing that the dynamically defined variables work as expected
 	 * @var int
 	 */
-	protected $circumference;
+	protected $dummyValue;
 
 	/**
-	 * An integer of the Circle's radius
-	 * @var int
+	 * Takes the configuration for a circle and passes it to the parent constructor
+	 * @param array $config
 	 */
-	protected $radius;
+	public function __construct(array $config) {
+		parent::__construct($config);
+	}
 
 	/**
-	 * Sets the available variables for Circle
-	 * @param array $variables
-	 * @return null
+	 * Returns a protected variable
 	 */
-	public function setVariables(array $variables) {
-		$this->name = 'Circle';
-		$this->circumference = $variables['circle']['circumference'];
-		$this->radius = $variables['circle']['radius'];
+	public function getEccentricity() : int {
+		return $this->eccentricity;
+	}
+
+	/**
+	 * Returns a protected variable
+	 */
+	public function getDummyValue() : int {
+		return $this->dummyValue;
 	}
 }
