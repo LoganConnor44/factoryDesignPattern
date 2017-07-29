@@ -51,7 +51,7 @@ class FactoryTest extends \PHPUnit_Framework_TestCase {
 
 		$TriangleFactory = FactoryProducer::getFactory("triangle");
 		$Triangle = $TriangleFactory->getShape();
-	$this->assertEquals(3, $Triangle->getNumberOfAngles());
+		$this->assertEquals(3, $Triangle->getNumberOfAngles());
 	}
 
 	/**

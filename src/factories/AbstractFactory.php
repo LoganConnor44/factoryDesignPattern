@@ -56,7 +56,7 @@ abstract class AbstractFactory {
 	}
 
 	/**
-	 * Reads the definitions file that is stored locally and searches for the key (factory name) that is associated with an individual shape
+	 * Retrieves definitions file that is stored locally and searches for the key (factory name) that is associated with an individual platform
 	 * @param string $shape
 	 * @return string
 	 */
@@ -65,6 +65,10 @@ abstract class AbstractFactory {
 		return array_search($shape, $definitions);
 	}
 
+	/**
+	 * Reads then returns the definitions file that is stored locally
+	 * @return array
+	 */
 	public static function getDefinitions() : array {
 		$directory = dirname(realpath(dirname(__FILE__))) .'/definitions';
 		$definitions = json_decode(file_get_contents($directory . DIRECTORY_SEPARATOR . 'shapes.json'), TRUE);
