@@ -25,6 +25,21 @@ abstract class NonPolygon extends Shape {
 	public function __construct(array $config) {
 		$nameOfShape = key($config);
 		parent::__construct($nameOfShape);
-		$this->setVariables($config);
+		$this->fociCoincide = $config[$this->name]['fociCoincide'];
+		$this->eccentricity = $config[$this->name]['eccentricity'];
 	}
+	/**
+	 * Returns a protected variable
+	 */
+	public function getEccentricity() : int {
+		return $this->eccentricity;
+	}
+
+	/**
+	 * Returns a protected variable
+	 */
+	public function getFociCoincide() : bool {
+		return $this->fociCoincide;
+	}
+	
 }

@@ -30,7 +30,9 @@ abstract class Polygon extends Shape {
 	public function __construct(array $config) {
 		$nameOfShape = key($config);
 		parent::__construct($nameOfShape);
-		$this->setVariables($config);
+		$this->allSidesEqualLength = $config[$this->name]['allSidesEqualLength'];
+		$this->oppositeSidesParallel = $config[$this->name]['oppositeSidesParallel'];
+		$this->vertices = $config[$this->name]['vertices'];
 	}
 
 	/**

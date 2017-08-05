@@ -24,6 +24,8 @@ class Triangle extends Polygon {
 	 */
 	public function __construct(array $config) {
 		parent::__construct($config);
+		$this->angles = $config[$this->name]['angles'];
+		$this->edges = $config[$this->name]['edges'];
 	}
 
 	/**

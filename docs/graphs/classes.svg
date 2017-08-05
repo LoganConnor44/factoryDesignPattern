@@ -17,117 +17,112 @@
 <path fill="none" stroke="gray" d="M28,-16C28,-16 666,-16 666,-16 672,-16 678,-22 678,-28 678,-28 678,-408 678,-408 678,-414 672,-420 666,-420 666,-420 28,-420 28,-420 22,-420 16,-414 16,-408 16,-408 16,-28 16,-28 16,-22 22,-16 28,-16"/>
 <text text-anchor="middle" x="347" y="-407.2" font-family="Times,serif" font-size="11.00" fill="gray">AbstractFactoryTutorial</text>
 </g>
-<g id="clust3" class="cluster"><title>cluster_\AbstractFactoryTutorial\Products</title>
-<path fill="none" stroke="gray" d="M36,-212C36,-212 621,-212 621,-212 627,-212 633,-218 633,-224 633,-224 633,-380 633,-380 633,-386 627,-392 621,-392 621,-392 36,-392 36,-392 30,-392 24,-386 24,-380 24,-380 24,-224 24,-224 24,-218 30,-212 36,-212"/>
-<text text-anchor="middle" x="328.5" y="-379.2" font-family="Times,serif" font-size="11.00" fill="gray">Products</text>
-</g>
 <g id="clust4" class="cluster"><title>cluster_\AbstractFactoryTutorial\Factory</title>
-<path fill="none" stroke="gray" d="M348,-24C348,-24 658,-24 658,-24 664,-24 670,-30 670,-36 670,-36 670,-192 670,-192 670,-198 664,-204 658,-204 658,-204 348,-204 348,-204 342,-204 336,-198 336,-192 336,-192 336,-36 336,-36 336,-30 342,-24 348,-24"/>
-<text text-anchor="middle" x="503" y="-191.2" font-family="Times,serif" font-size="11.00" fill="gray">Factory</text>
+<path fill="none" stroke="gray" d="M348,-212C348,-212 658,-212 658,-212 664,-212 670,-218 670,-224 670,-224 670,-380 670,-380 670,-386 664,-392 658,-392 658,-392 348,-392 348,-392 342,-392 336,-386 336,-380 336,-380 336,-224 336,-224 336,-218 342,-212 348,-212"/>
+<text text-anchor="middle" x="503" y="-379.2" font-family="Times,serif" font-size="11.00" fill="gray">Factory</text>
+</g>
+<g id="clust3" class="cluster"><title>cluster_\AbstractFactoryTutorial\Products</title>
+<path fill="none" stroke="gray" d="M36,-24C36,-24 621,-24 621,-24 627,-24 633,-30 633,-36 633,-36 633,-192 633,-192 633,-198 627,-204 621,-204 621,-204 36,-204 36,-204 30,-204 24,-198 24,-192 24,-192 24,-36 24,-36 24,-30 30,-24 36,-24"/>
+<text text-anchor="middle" x="328.5" y="-191.2" font-family="Times,serif" font-size="11.00" fill="gray">Products</text>
 </g>
 <!-- \\AbstractFactoryTutorial\\Products\\Circle -->
 <g id="node1" class="node"><title>\\AbstractFactoryTutorial\\Products\\Circle</title>
-<polygon fill="none" stroke="black" points="625,-364 569,-364 569,-328 625,-328 625,-364"/>
-<text text-anchor="middle" x="597" y="-343.2" font-family="Courier,monospace" font-size="11.00">Circle</text>
+<polygon fill="none" stroke="black" points="625,-176 569,-176 569,-140 625,-140 625,-176"/>
+<text text-anchor="middle" x="597" y="-155.2" font-family="Courier,monospace" font-size="11.00">Circle</text>
 </g>
 <!-- \\AbstractFactoryTutorial\\Products\\Ellipse -->
 <g id="node7" class="node"><title>\\AbstractFactoryTutorial\\Products\\Ellipse</title>
-<polygon fill="none" stroke="black" points="433.5,-364 370.5,-364 370.5,-328 433.5,-328 433.5,-364"/>
-<text text-anchor="middle" x="402" y="-343.2" font-family="Courier,monospace" font-size="11.00">Ellipse</text>
+<polygon fill="none" stroke="black" points="433.5,-176 370.5,-176 370.5,-140 433.5,-140 433.5,-176"/>
+<text text-anchor="middle" x="402" y="-155.2" font-family="Courier,monospace" font-size="11.00">Ellipse</text>
 </g>
 <!-- \\AbstractFactoryTutorial\\Products\\Circle&#45;&gt;\\AbstractFactoryTutorial\\Products\\Ellipse -->
 <g id="edge1" class="edge"><title>\\AbstractFactoryTutorial\\Products\\Circle&#45;&gt;\\AbstractFactoryTutorial\\Products\\Ellipse</title>
-<path fill="none" stroke="black" d="M568.757,-346C536.18,-346 481.345,-346 443.728,-346"/>
-<polygon fill="none" stroke="black" points="443.607,-342.5 433.607,-346 443.607,-349.5 443.607,-342.5"/>
+<path fill="none" stroke="black" d="M568.757,-158C536.18,-158 481.345,-158 443.728,-158"/>
+<polygon fill="none" stroke="black" points="443.607,-154.5 433.607,-158 443.607,-161.5 443.607,-154.5"/>
 </g>
 <!-- \\AbstractFactoryTutorial\\Products\\Polygon -->
 <g id="node2" class="node"><title>\\AbstractFactoryTutorial\\Products\\Polygon</title>
-<polygon fill="none" stroke="black" points="271.5,-310 188.5,-310 188.5,-274 271.5,-274 271.5,-310"/>
-<text text-anchor="start" x="196.5" y="-295.2" font-family="Courier,monospace" font-size="11.00">«abstract»</text>
-<text text-anchor="start" x="206.5" y="-283.2" font-family="Courier,monospace" font-size="11.00">Polygon</text>
+<polygon fill="none" stroke="black" points="271.5,-122 188.5,-122 188.5,-86 271.5,-86 271.5,-122"/>
+<text text-anchor="start" x="196.5" y="-107.2" font-family="Courier,monospace" font-size="11.00">«abstract»</text>
+<text text-anchor="start" x="206.5" y="-95.2" font-family="Courier,monospace" font-size="11.00">Polygon</text>
 </g>
 <!-- \\AbstractFactoryTutorial\\Products\\Shape -->
 <g id="node3" class="node"><title>\\AbstractFactoryTutorial\\Products\\Shape</title>
-<polygon fill="none" stroke="black" points="115.5,-337 32.5,-337 32.5,-301 115.5,-301 115.5,-337"/>
-<text text-anchor="start" x="40.5" y="-322.2" font-family="Courier,monospace" font-size="11.00">«abstract»</text>
-<text text-anchor="start" x="57" y="-310.2" font-family="Courier,monospace" font-size="11.00">Shape</text>
+<polygon fill="none" stroke="black" points="115.5,-149 32.5,-149 32.5,-113 115.5,-113 115.5,-149"/>
+<text text-anchor="start" x="40.5" y="-134.2" font-family="Courier,monospace" font-size="11.00">«abstract»</text>
+<text text-anchor="start" x="57" y="-122.2" font-family="Courier,monospace" font-size="11.00">Shape</text>
 </g>
 <!-- \\AbstractFactoryTutorial\\Products\\Polygon&#45;&gt;\\AbstractFactoryTutorial\\Products\\Shape -->
-<g id="edge3" class="edge"><title>\\AbstractFactoryTutorial\\Products\\Polygon&#45;&gt;\\AbstractFactoryTutorial\\Products\\Shape</title>
-<path fill="none" stroke="black" d="M188.135,-299.165C168.925,-302.533 145.835,-306.581 125.538,-310.139"/>
-<polygon fill="none" stroke="black" points="124.767,-306.721 115.521,-311.896 125.976,-313.616 124.767,-306.721"/>
+<g id="edge2" class="edge"><title>\\AbstractFactoryTutorial\\Products\\Polygon&#45;&gt;\\AbstractFactoryTutorial\\Products\\Shape</title>
+<path fill="none" stroke="black" d="M188.135,-111.165C168.925,-114.533 145.835,-118.581 125.538,-122.139"/>
+<polygon fill="none" stroke="black" points="124.767,-118.721 115.521,-123.896 125.976,-125.616 124.767,-118.721"/>
 </g>
 <!-- \\AbstractFactoryTutorial\\Products\\Rectangle -->
 <g id="node4" class="node"><title>\\AbstractFactoryTutorial\\Products\\Rectangle</title>
-<polygon fill="none" stroke="black" points="440,-310 364,-310 364,-274 440,-274 440,-310"/>
-<text text-anchor="middle" x="402" y="-289.2" font-family="Courier,monospace" font-size="11.00">Rectangle</text>
+<polygon fill="none" stroke="black" points="440,-122 364,-122 364,-86 440,-86 440,-122"/>
+<text text-anchor="middle" x="402" y="-101.2" font-family="Courier,monospace" font-size="11.00">Rectangle</text>
 </g>
 <!-- \\AbstractFactoryTutorial\\Products\\Rectangle&#45;&gt;\\AbstractFactoryTutorial\\Products\\Polygon -->
-<g id="edge4" class="edge"><title>\\AbstractFactoryTutorial\\Products\\Rectangle&#45;&gt;\\AbstractFactoryTutorial\\Products\\Polygon</title>
-<path fill="none" stroke="black" d="M363.693,-292C339.706,-292 308.226,-292 281.948,-292"/>
-<polygon fill="none" stroke="black" points="281.789,-288.5 271.788,-292 281.788,-295.5 281.789,-288.5"/>
+<g id="edge3" class="edge"><title>\\AbstractFactoryTutorial\\Products\\Rectangle&#45;&gt;\\AbstractFactoryTutorial\\Products\\Polygon</title>
+<path fill="none" stroke="black" d="M363.693,-104C339.706,-104 308.226,-104 281.948,-104"/>
+<polygon fill="none" stroke="black" points="281.789,-100.5 271.788,-104 281.788,-107.5 281.789,-100.5"/>
 </g>
 <!-- \\AbstractFactoryTutorial\\Products\\NonPolygon -->
 <g id="node5" class="node"><title>\\AbstractFactoryTutorial\\Products\\NonPolygon</title>
-<polygon fill="none" stroke="black" points="271.5,-364 188.5,-364 188.5,-328 271.5,-328 271.5,-364"/>
-<text text-anchor="start" x="196.5" y="-349.2" font-family="Courier,monospace" font-size="11.00">«abstract»</text>
-<text text-anchor="start" x="196.5" y="-337.2" font-family="Courier,monospace" font-size="11.00">NonPolygon</text>
+<polygon fill="none" stroke="black" points="271.5,-176 188.5,-176 188.5,-140 271.5,-140 271.5,-176"/>
+<text text-anchor="start" x="196.5" y="-161.2" font-family="Courier,monospace" font-size="11.00">«abstract»</text>
+<text text-anchor="start" x="196.5" y="-149.2" font-family="Courier,monospace" font-size="11.00">NonPolygon</text>
 </g>
 <!-- \\AbstractFactoryTutorial\\Products\\NonPolygon&#45;&gt;\\AbstractFactoryTutorial\\Products\\Shape -->
-<g id="edge5" class="edge"><title>\\AbstractFactoryTutorial\\Products\\NonPolygon&#45;&gt;\\AbstractFactoryTutorial\\Products\\Shape</title>
-<path fill="none" stroke="black" d="M188.135,-338.835C168.925,-335.467 145.835,-331.419 125.538,-327.861"/>
-<polygon fill="none" stroke="black" points="125.976,-324.384 115.521,-326.104 124.767,-331.279 125.976,-324.384"/>
+<g id="edge4" class="edge"><title>\\AbstractFactoryTutorial\\Products\\NonPolygon&#45;&gt;\\AbstractFactoryTutorial\\Products\\Shape</title>
+<path fill="none" stroke="black" d="M188.135,-150.835C168.925,-147.467 145.835,-143.419 125.538,-139.861"/>
+<polygon fill="none" stroke="black" points="125.976,-136.384 115.521,-138.104 124.767,-143.279 125.976,-136.384"/>
 </g>
 <!-- \\AbstractFactoryTutorial\\Products\\Triangle -->
 <g id="node6" class="node"><title>\\AbstractFactoryTutorial\\Products\\Triangle</title>
-<polygon fill="none" stroke="black" points="436.5,-256 367.5,-256 367.5,-220 436.5,-220 436.5,-256"/>
-<text text-anchor="middle" x="402" y="-235.2" font-family="Courier,monospace" font-size="11.00">Triangle</text>
+<polygon fill="none" stroke="black" points="436.5,-68 367.5,-68 367.5,-32 436.5,-32 436.5,-68"/>
+<text text-anchor="middle" x="402" y="-47.2" font-family="Courier,monospace" font-size="11.00">Triangle</text>
 </g>
 <!-- \\AbstractFactoryTutorial\\Products\\Triangle&#45;&gt;\\AbstractFactoryTutorial\\Products\\Polygon -->
-<g id="edge7" class="edge"><title>\\AbstractFactoryTutorial\\Products\\Triangle&#45;&gt;\\AbstractFactoryTutorial\\Products\\Polygon</title>
-<path fill="none" stroke="black" d="M367.413,-248.669C342.831,-256.477 309.058,-267.205 281.268,-276.033"/>
-<polygon fill="none" stroke="black" points="280.184,-272.705 271.712,-279.068 282.303,-279.376 280.184,-272.705"/>
+<g id="edge6" class="edge"><title>\\AbstractFactoryTutorial\\Products\\Triangle&#45;&gt;\\AbstractFactoryTutorial\\Products\\Polygon</title>
+<path fill="none" stroke="black" d="M367.413,-60.6687C342.831,-68.4773 309.058,-79.205 281.268,-88.0325"/>
+<polygon fill="none" stroke="black" points="280.184,-84.7046 271.712,-91.0678 282.303,-91.3761 280.184,-84.7046"/>
 </g>
 <!-- \\AbstractFactoryTutorial\\Products\\Ellipse&#45;&gt;\\AbstractFactoryTutorial\\Products\\NonPolygon -->
-<g id="edge9" class="edge"><title>\\AbstractFactoryTutorial\\Products\\Ellipse&#45;&gt;\\AbstractFactoryTutorial\\Products\\NonPolygon</title>
-<path fill="none" stroke="black" d="M370.214,-346C345.672,-346 310.78,-346 282.068,-346"/>
-<polygon fill="none" stroke="black" points="281.8,-342.5 271.8,-346 281.8,-349.5 281.8,-342.5"/>
+<g id="edge8" class="edge"><title>\\AbstractFactoryTutorial\\Products\\Ellipse&#45;&gt;\\AbstractFactoryTutorial\\Products\\NonPolygon</title>
+<path fill="none" stroke="black" d="M370.214,-158C345.672,-158 310.78,-158 282.068,-158"/>
+<polygon fill="none" stroke="black" points="281.8,-154.5 271.8,-158 281.8,-161.5 281.8,-154.5"/>
 </g>
 <!-- \\AbstractFactoryTutorial\\Factory\\FactoryProducer -->
 <g id="node8" class="node"><title>\\AbstractFactoryTutorial\\Factory\\FactoryProducer</title>
-<polygon fill="none" stroke="black" points="655,-176 539,-176 539,-140 655,-140 655,-176"/>
-<text text-anchor="middle" x="597" y="-155.2" font-family="Courier,monospace" font-size="11.00">FactoryProducer</text>
+<polygon fill="none" stroke="black" points="655,-364 539,-364 539,-328 655,-328 655,-364"/>
+<text text-anchor="middle" x="597" y="-343.2" font-family="Courier,monospace" font-size="11.00">FactoryProducer</text>
 </g>
 <!-- \\AbstractFactoryTutorial\\Factory\\AbstractFactory -->
 <g id="node9" class="node"><title>\\AbstractFactoryTutorial\\Factory\\AbstractFactory</title>
-<polygon fill="none" stroke="black" points="460,-122 344,-122 344,-86 460,-86 460,-122"/>
-<text text-anchor="start" x="368.5" y="-107.2" font-family="Courier,monospace" font-size="11.00">«abstract»</text>
-<text text-anchor="start" x="352" y="-95.2" font-family="Courier,monospace" font-size="11.00">AbstractFactory</text>
-</g>
-<!-- \\AbstractFactoryTutorial\\Factory\\FactoryProducer&#45;&gt;\\AbstractFactoryTutorial\\Factory\\AbstractFactory -->
-<g id="edge2" class="edge"><title>\\AbstractFactoryTutorial\\Factory\\FactoryProducer&#45;&gt;\\AbstractFactoryTutorial\\Factory\\AbstractFactory</title>
-<path fill="none" stroke="black" d="M538.877,-142.017C517.285,-135.976 492.518,-129.046 470.093,-122.772"/>
-<polygon fill="none" stroke="black" points="470.883,-119.359 460.31,-120.035 468.997,-126.1 470.883,-119.359"/>
+<polygon fill="none" stroke="black" points="460,-283 344,-283 344,-247 460,-247 460,-283"/>
+<text text-anchor="start" x="368.5" y="-268.2" font-family="Courier,monospace" font-size="11.00">«abstract»</text>
+<text text-anchor="start" x="352" y="-256.2" font-family="Courier,monospace" font-size="11.00">AbstractFactory</text>
 </g>
 <!-- \\AbstractFactoryTutorial\\Factory\\NonPolygonFactory -->
 <g id="node10" class="node"><title>\\AbstractFactoryTutorial\\Factory\\NonPolygonFactory</title>
-<polygon fill="none" stroke="black" points="661.5,-122 532.5,-122 532.5,-86 661.5,-86 661.5,-122"/>
-<text text-anchor="middle" x="597" y="-101.2" font-family="Courier,monospace" font-size="11.00">NonPolygonFactory</text>
+<polygon fill="none" stroke="black" points="661.5,-310 532.5,-310 532.5,-274 661.5,-274 661.5,-310"/>
+<text text-anchor="middle" x="597" y="-289.2" font-family="Courier,monospace" font-size="11.00">NonPolygonFactory</text>
 </g>
 <!-- \\AbstractFactoryTutorial\\Factory\\NonPolygonFactory&#45;&gt;\\AbstractFactoryTutorial\\Factory\\AbstractFactory -->
-<g id="edge6" class="edge"><title>\\AbstractFactoryTutorial\\Factory\\NonPolygonFactory&#45;&gt;\\AbstractFactoryTutorial\\Factory\\AbstractFactory</title>
-<path fill="none" stroke="black" d="M532.27,-104C512.357,-104 490.331,-104 470.189,-104"/>
-<polygon fill="none" stroke="black" points="470.16,-100.5 460.16,-104 470.16,-107.5 470.16,-100.5"/>
+<g id="edge5" class="edge"><title>\\AbstractFactoryTutorial\\Factory\\NonPolygonFactory&#45;&gt;\\AbstractFactoryTutorial\\Factory\\AbstractFactory</title>
+<path fill="none" stroke="black" d="M532.27,-283.084C512.357,-280.299 490.331,-277.217 470.189,-274.399"/>
+<polygon fill="none" stroke="black" points="470.548,-270.916 460.16,-272.996 469.578,-277.848 470.548,-270.916"/>
 </g>
 <!-- \\AbstractFactoryTutorial\\Factory\\PolygonFactory -->
 <g id="node11" class="node"><title>\\AbstractFactoryTutorial\\Factory\\PolygonFactory</title>
-<polygon fill="none" stroke="black" points="651.5,-68 542.5,-68 542.5,-32 651.5,-32 651.5,-68"/>
-<text text-anchor="middle" x="597" y="-47.2" font-family="Courier,monospace" font-size="11.00">PolygonFactory</text>
+<polygon fill="none" stroke="black" points="651.5,-256 542.5,-256 542.5,-220 651.5,-220 651.5,-256"/>
+<text text-anchor="middle" x="597" y="-235.2" font-family="Courier,monospace" font-size="11.00">PolygonFactory</text>
 </g>
 <!-- \\AbstractFactoryTutorial\\Factory\\PolygonFactory&#45;&gt;\\AbstractFactoryTutorial\\Factory\\AbstractFactory -->
-<g id="edge8" class="edge"><title>\\AbstractFactoryTutorial\\Factory\\PolygonFactory&#45;&gt;\\AbstractFactoryTutorial\\Factory\\AbstractFactory</title>
-<path fill="none" stroke="black" d="M542.495,-64.9703C520.042,-71.2525 493.685,-78.6269 469.964,-85.264"/>
-<polygon fill="none" stroke="black" points="469.013,-81.8955 460.326,-87.9605 470.899,-88.6366 469.013,-81.8955"/>
+<g id="edge7" class="edge"><title>\\AbstractFactoryTutorial\\Factory\\PolygonFactory&#45;&gt;\\AbstractFactoryTutorial\\Factory\\AbstractFactory</title>
+<path fill="none" stroke="black" d="M542.495,-245.485C520.142,-248.612 493.92,-252.281 470.28,-255.588"/>
+<polygon fill="none" stroke="black" points="469.745,-252.128 460.326,-256.98 470.715,-259.061 469.745,-252.128"/>
 </g>
 </g>
 </svg>

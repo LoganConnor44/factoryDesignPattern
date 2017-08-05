@@ -18,13 +18,7 @@ class Circle extends Ellipse {
 	 */
 	public function __construct(array $config) {
 		parent::__construct($config);
-	}
-
-	/**
-	 * Returns a protected variable
-	 */
-	public function getEccentricity() : int {
-		return $this->eccentricity;
+		$this->dummyValue = $config[$this->name]['dummyValue'];
 	}
 
 	/**

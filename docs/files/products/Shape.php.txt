@@ -21,18 +21,6 @@ abstract class Shape {
 	}
 
 	/**
-	 * Recursively goes through an array and if a variable is undefined it dynamically defines it based on the passed $config $value
-	 * @param array $config
-	 */
-	public function setVariables(array $config) {
-		array_walk_recursive($config, function($value, $key) {
-			if (empty($this->$key)) {
-				$this->$key = $value;
-			}
-		} );
-	}
-
-	/**
 	 * Returns the protected variable $name
 	 * @return string $name
 	 */
