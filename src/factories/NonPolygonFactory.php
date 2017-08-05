@@ -19,6 +19,11 @@ class NonPolygonFactory extends AbstractFactory {
 		parent::__construct($nameOfShape);
 	}
 
+	/**
+	 * Sets the properties specific to the passed in shape
+	 * @param array $shapeConfig
+	 * @return void
+	 */
 	public function setPropertiesOfShape(array $shapeConfig) {
 		$this->shapeProperties = $shapeConfig;
 	}

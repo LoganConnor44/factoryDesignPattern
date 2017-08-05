@@ -10,6 +10,9 @@ class FactoryTest extends \PHPUnit_Framework_TestCase {
 	public $rectangleFixture;
 	public $triangleFixture;
 
+	/**
+	 * Sets up the shape configurations before ever test
+	 */
 	public function setUp() {
 		$directory = dirname(realpath(dirname(__FILE__))) .'/tests/fixtures';
 		$this->circleFixture = json_decode(file_get_contents($directory . DIRECTORY_SEPARATOR . 'circle.json'), TRUE);
@@ -67,6 +70,9 @@ class FactoryTest extends \PHPUnit_Framework_TestCase {
 		$this->assertEquals(3, $Triangle->getNumberOfAngles());
 	}
 
+	/**
+	 * Verify that the static method returns the correct factory object
+	 */
 	public function testGetFactoryForShape() {
 		$Factory = FactoryProducer::getFactoryForShape('circle');
 		$this->assertTrue($Factory instanceof AbstractFactoryTutorial\Factory\NonPolygonFactory);

@@ -9,12 +9,6 @@ use AbstractFactoryTutorial\Product;
 abstract class AbstractFactory {
 
 	/**
-	 * The locally stored definitions data for all available shapes
-	 * @var array
-	 */
-	//protected $shapeDefinitions;
-
-	/**
 	 * Name of the shape that will be produced
 	 * @var string
 	 */
@@ -35,82 +29,24 @@ abstract class AbstractFactory {
 		$this->shapeName = $shape;
 	}
 
+	/**
+	 * An abstract function for children classes to define. This will always take in an array for the configuration of a shape
+	 * @internal php can not define return types within an abstract method
+	 * @param array $shapeConfig
+	 */
 	abstract protected function setPropertiesOfShape(array $shapeConfig);
 
+	/**
+	 * An abstract function for children classes to define
+	 * @internal php can not define return types within an abstract method
+	 */
 	abstract protected function getShape();
 
+	/**
+	 * Returns the protected property of $shapeProperties
+	 * @return array
+	 */
 	public function getPropertiesOfShape() : array {
 		return $this->shapeProperties;
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	// /**
-	//  * Reads the file names in the factory directory and verifies that the $shapeType has a valid class written for it
-	//  * @param string $shapeType
-	//  * @return bool
-	//  */
-	// public static function isGivenShapeValid(string $shapeType): bool {
-	// 	$directory = dirname(realpath(dirname(__FILE__))) .'/products';
-	// 	//array_diff() removes the dots that this function picks up
-	// 	$availableShapeObjects = array_diff(scandir($directory), array('..', '.'));
-	// 	$shapeType = strtolower($shapeType);
-
-	// 	foreach($availableShapeObjects as $index => &$shape) {
-	// 		$shape = strtolower(strrev(substr(strrev($shape), 4)));
-	// 	}
-
-	// 	if (!in_array($shapeType, $availableShapeObjects)) {
-	// 		return FALSE;
-	// 	}
-	// 	return TRUE;
-	// }
-
-	// *
-	//  * Retrieves definitions file that is stored locally and searches for the key (factory name) that is associated with an individual platform
-	//  * @param string $shape
-	//  * @return string
-	 
-	// public static function getExpectedFactoryFromShape(string $shape) : string {
-	// 	$definitions = self::getDefinitions();
-	// 	return array_search($shape, $definitions);
-	// }
-
-	
-
-	// /**
-	//  * Reads the file names in the factories directory and verifies that the $factoryType has a valid class written for it
-	//  * @param string $factoryType
-	//  * @return bool
-	//  */
-	// public static function isGivenFactoryValid(string $factoryType): bool {
-	// 	$directory = dirname(realpath(dirname(__FILE__))) .'/factories';
-	// 	//array_diff() removes the dots that this function picks up
-	// 	$availableFactoryObjects = array_diff(scandir($directory), array('..', '.'));
-	// 	$factoryType = strtolower($factoryType);
-
-	// 	foreach($availableFactoryObjects as $index => &$factory) {
-	// 		$factory = strtolower(strrev(substr(strrev($factory), 4)));
-	// 	}
-
-	// 	if (!in_array($factoryType, $availableFactoryObjects)) {
-	// 		return FALSE;
-	// 	}
-	// 	return TRUE;
-	// }
 }
