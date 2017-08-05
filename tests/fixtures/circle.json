@@ -1,0 +1,7 @@
+{
+	"circle": {
+		"fociCoincide": true,
+		"eccentricity": 1,
+		"dummyValue" :25
+	}	
+}

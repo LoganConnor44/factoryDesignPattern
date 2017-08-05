@@ -12,14 +12,16 @@ use AbstractFactoryTutorial\Products\Triangle;
 class PolygonFactory extends AbstractFactory {
 
 	/**
-	 * Calls the AbstractFactory constructor to verify that shape is valid
-	 * @param array $config
+	 * Calls the AbstractFactory constructor to verify that shape is valid and factory is 
+	 * @param string $nameOfShape
 	 * @return void
 	 */
-	public function __construct(array $config) {
-		$nameOfShape = key($config);
+	public function __construct(string $nameOfShape) {
 		parent::__construct($nameOfShape);
-		$this->shapeConfig = $config;
+	}
+
+	public function setPropertiesOfShape(array $shapeConfig) {
+		$this->shapeProperties = $shapeConfig;
 	}
 
 	/**
@@ -29,11 +31,11 @@ class PolygonFactory extends AbstractFactory {
 	public function getShape() : Shape {
 		switch ($this->shapeName) {
 			case "rectangle" :
-				return new Rectangle($this->shapeConfig);
+				return new Rectangle($this->shapeProperties);
 			case "square" :
-				return new Square($this->shapeConfig);
+				return new Square($this->shapeProperties);
 			case "triangle" :
-				return new Triangle($this->shapeConfig);
+				return new Triangle($this->shapeProperties);
 		}
 	}
 }

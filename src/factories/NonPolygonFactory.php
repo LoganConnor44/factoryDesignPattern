@@ -12,13 +12,15 @@ class NonPolygonFactory extends AbstractFactory {
 
 	/**
 	 * Calls the AbstractFactory constructor to verify that shape is valid and factory is 
-	 * @param string $config
+	 * @param string $nameOfShape
 	 * @return void
 	 */
-	public function __construct(array $config) {
-		$nameOfShape = key($config);
+	public function __construct(string $nameOfShape) {
 		parent::__construct($nameOfShape);
-		$this->shapeConfig = $config;
+	}
+
+	public function setPropertiesOfShape(array $shapeConfig) {
+		$this->shapeProperties = $shapeConfig;
 	}
 
 	/**
@@ -28,11 +30,11 @@ class NonPolygonFactory extends AbstractFactory {
 	public function getShape() : Shape {
 		switch ($this->shapeName) {
 			case "circle" :
-				return new Circle($this->shapeConfig);
+				return new Circle($this->shapeProperties);
 			case "ellipse" :
-				return new Ellipse($this->shapeConfig);
+				return new Ellipse($this->shapeProperties);
 			case "oval" :
-				return new Oval($this->shapeConfig);
+				return new Oval($this->shapeProperties);
 		}
 	}
 }

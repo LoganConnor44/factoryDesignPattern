@@ -1,0 +1,7 @@
+{
+	"rectangle" : {
+		"vertices": 4,
+		"allSidesEqualLength": false,
+		"oppositeSidesParallel": true
+	}
+}

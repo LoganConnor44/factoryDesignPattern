@@ -1,0 +1,11 @@
+{
+	"NonPolygon" : [
+		"ellipse",
+		"circle"
+	],
+	"Polygon" : [
+		"rectangle",
+		"square",
+		"triangle"
+	]	
+}

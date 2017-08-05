@@ -1,0 +1,9 @@
+{
+	"triangle" : {
+		"vertices": 3,
+		"allSidesEqualLength" : true,
+		"oppositeSidesParallel": false,
+		"angles": 3,
+		"edges": 3
+	}
+}
