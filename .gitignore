@@ -3,3 +3,10 @@ vendor/*
 
 # PHP Intellicense
 .phpintel/*
+
+# Visual Studio Files
+.DS_Store
+.vscode/
+
+# PHP Vendor Files
+vendor/
