@@ -1,10 +1,11 @@
 # Factory Design Pattern
-This repo is a practive repository after studying more about the Factory Method. Unit tests are included in the repository.
+This design pattern generates an instance for client without exposing any instantiation logic to the client.
 
-### When Should The Abstract Factory Method Be Used?
-* An object's class doesn't know what exact sub-classes it has to create
+## Why Use The Factory Method
+* Allows the consumer to create new objects without having to know the details of their dependencies or how they're created. The consumer only needs to give a top level request of the object needed.
 
-* An object should be configured by on of several possible families of linked objects that will be part of your parent object
+## Real-World Example
+* You are purchasing furniture for a new home. Normally people do not create the furniture from scratch, but go to a store(factory) and purchase a product. This is the same concept. This pattern allows the client to request an object without being concerned with all the nails, lumber, or paint that may be involved.
 
 # Various Languages
 
