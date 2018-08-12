@@ -62,20 +62,20 @@ This example demonstrates how to create defined animals. The animals are defined
 
 ```python
 mammalFactory = MammalFactory()
-    fishFactory = FishFactory()
+fishFactory = FishFactory()
 
-    Mammals = mammalFactory.CreateAllKnownMammals()
-    Fishes = fishFactory.CreateAllKnownFish()
+Mammals = mammalFactory.CreateAllKnownMammals()
+Fishes = fishFactory.CreateAllKnownFish()
 
-    # merge the lists
-    allCreatures = Mammals + Fishes
+# merge the lists
+allCreatures = Mammals + Fishes
 
-    for creature in allCreatures :
-        print("Animal Name: {}" . format(creature.__class__.__name__))
-        print("Description: {}" . format(creature.Description()))
-        print("This animal says: {}" . format(creature.Speak()))
-        print("Attack: {}" . format(creature.Attack()))
-        print()
+for creature in allCreatures :
+    print("Animal Name: {}" . format(creature.__class__.__name__))
+    print("Description: {}" . format(creature.Description()))
+    print("This animal says: {}" . format(creature.Speak()))
+    print("Attack: {}" . format(creature.Attack()))
+    print()
 ```
 
 ```json
