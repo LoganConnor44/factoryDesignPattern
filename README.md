@@ -97,6 +97,9 @@ vendor/bin/phpunit
     └── __init__.py
 ```
 
+### UML Diagram
+[Click Here](http://htmlpreview.github.io/?https://github.com/LoganConnor44/factoryDesignPattern/blob/master/python-example/python-example.html)
+
 This example demonstrates how to create defined animals. The animals are defined in a definitions file, also shown below.
 
 ### python-example/main.py
