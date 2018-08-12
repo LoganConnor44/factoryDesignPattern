@@ -58,12 +58,72 @@ vendor/bin/phpunit
 
 ## Python
 
-This example demonstrates how to create a ```cat``` and ```dog``` object that both have the ability to ```speak```, but performed in different ways.
+This example demonstrates how to create defined animals. The animals are defined in a definitions file, also shown below.
 
 ```python
-Factory = AnimalFactory()
-Cat = Factory.CreateCat()
-Dog = Factory.CreateDog()
-Cat.Speak()
-Dog.Speak()
+mammalFactory = MammalFactory()
+    fishFactory = FishFactory()
+
+    Mammals = mammalFactory.CreateAllKnownMammals()
+    Fishes = fishFactory.CreateAllKnownFish()
+
+    # merge the lists
+    allCreatures = Mammals + Fishes
+
+    for creature in allCreatures :
+        print("Animal Name: {}" . format(creature.__class__.__name__))
+        print("Description: {}" . format(creature.Description()))
+        print("This animal says: {}" . format(creature.Speak()))
+        print("Attack: {}" . format(creature.Attack()))
+        print()
+```
+
+```json
+{
+    "mammal" : {
+            "Cat" : {
+                    "speak" : "meow",
+                    "legs" : 4,
+                    "attack" : "Cat performs scratch.",
+                    "description" : "Rules humanity through creating the internet and posting adorable photos of themselves."
+                }
+            ,
+            "Dog" : {
+                    "speak" : "woof",
+                    "legs" : 4,
+                    "attack" : "Dog performs bite.",
+                    "description" : "Ruled by humanity due to their forgetful nature."
+                }
+        },
+    "fish" : {
+            "Magikarp" : {
+                    "speak" : "bubbles",
+                    "legs" : 0,
+                    "attack" : "Magikarp used splash, but nothing happened.",
+                    "description" : "Until it reaches level 20, it is utterly useless."
+                }
+        }
+}
+```
+
+This result in the following being printed to the terminal:
+
+```bash
+loganconnor44@Logans-MacBook-Pro ~/Documents/workspace/factoryDesignPattern (master)
+$ python3 python-example/main.py 
+
+Animal Name: Cat
+Description: Rules humanity through creating the internet and posting adorable photos of themselves.
+This animal says: meow
+Attack: Cat performs scratch.
+
+Animal Name: Dog
+Description: Ruled by humanity due to their forgetful nature.
+This animal says: woof
+Attack: Dog performs bite.
+
+Animal Name: Magikarp
+Description: Until it reaches level 20, it is utterly useless.
+This animal says: bubbles
+Attack: Magikarp used splash, but nothing happened.
 ```
