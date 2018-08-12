@@ -11,9 +11,29 @@ This design pattern generates an instance for the client without exposing any in
 
 ## PHP
 
+### Directory Structure
+```bash
+├── definitions
+│   └── factories.json
+├── factories
+│   ├── AbstractFactory.php
+│   ├── FactoryProducer.php
+│   ├── NonPolygonFactory.php
+│   └── PolygonFactory.php
+└── products
+    ├── Circle.php
+    ├── Ellipse.php
+    ├── NonPolygon.php
+    ├── Polygon.php
+    ├── Rectangle.php
+    ├── Shape.php
+    ├── Square.php
+    └── Triangle.php
+```
+
 ### Code Examples
 
-Attempting to create a triangle may look something like this:
+Attempting to create a triangle manually may look something like this:
 ```php
 $Triangle = new Polygon(
     3,
@@ -36,7 +56,7 @@ $Triangle->angles = 3
 $Triangle->edges = 3;
 ```
 
-The below code is an example of how to create various shapes using the Abstract Factory Method.
+The below code is an example of how to create various shapes *using* the **Abstract Factory Method**.
 ```php
 $Factory = FactoryProducer::getFactoryForShape("triangle");
 $Factory->setPropertiesOfShape($this->triangleAttributes);
@@ -58,8 +78,28 @@ vendor/bin/phpunit
 
 ## Python
 
+### Directory Structure
+```bash
+├── __init__.py
+├── definitions
+│   └── available-products.json
+├── factory
+│   ├── AbstractAnimalFactory.py
+│   ├── FishFactory.py
+│   ├── MammalFactory.py
+│   └── __init__.py
+├── main.py
+└── products
+    ├── AbstractAnimal.py
+    ├── Cat.py
+    ├── Dog.py
+    ├── Magikarp.py
+    └── __init__.py
+```
+
 This example demonstrates how to create defined animals. The animals are defined in a definitions file, also shown below.
 
+### python-example/main.py
 ```python
 mammalFactory = MammalFactory()
 fishFactory = FishFactory()
@@ -78,6 +118,7 @@ for creature in allCreatures :
     print()
 ```
 
+### python-example/definitions/available-products.json
 ```json
 {
     "mammal" : {
