@@ -1,13 +1,14 @@
 from .AbstractAnimal import AbstractAnimal
 
-class Dog(AbstractAnimal):
+class Magikarp(AbstractAnimal) :
     """
     Define a product object to be created by the corresponding concrete
     factory.
     Implement the AbstractProduct interface.
     """
+
     def setup(self, definition) :
-        self.definition = definition['Dog']
+        self.definition = definition['Magikarp']
         return
 
     def Speak(self) :

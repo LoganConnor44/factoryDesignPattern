@@ -1,4 +1,4 @@
-import abc
+import abc, json
 
 class AbstractAnimalFactory(metaclass=abc.ABCMeta) :
     """
@@ -6,10 +6,6 @@ class AbstractAnimalFactory(metaclass=abc.ABCMeta) :
     objects.
     """
 
-    @abc.abstractmethod
-    def CreateCat(self):
-        pass
-
-    @abc.abstractmethod
-    def CreateDog(self):
-        pass
+    def __init__(self) :
+        with open('./definitions/available-products.json') as definitions:
+            self.allDefinitions = json.load(definitions)

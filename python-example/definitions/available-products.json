@@ -1,0 +1,25 @@
+{
+    "mammal" : {
+            "Cat" : {
+                    "speak" : "meow",
+                    "legs" : 4,
+                    "attack" : "Cat performs scratch.",
+                    "description" : "Rules humanity through creating the internet and posting adorable photos of themselves."
+                }
+            ,
+            "Dog" : {
+                    "speak" : "woof",
+                    "legs" : 4,
+                    "attack" : "Dog performs bite.",
+                    "description" : "Ruled by humanity due to their forgetful nature."
+                }
+        },
+    "fish" : {
+            "Magikarp" : {
+                    "speak" : "bubbles",
+                    "legs" : 0,
+                    "attack" : "Magikarp used splash, but nothing happened.",
+                    "description" : "Until it reaches level 20, it is utterly useless."
+                }
+        }
+}

@@ -6,7 +6,15 @@ class Cat(AbstractAnimal):
     factory.
     Implement the AbstractProduct interface.
     """
+    def setup(self, definition) :
+        self.definition = definition['Cat']
+        return
 
     def Speak(self):
-        print("meow")
-        return
+        return self.definition['speak']
+
+    def Description(self) :
+        return self.definition['description']
+
+    def Attack(self) :
+        return self.definition['attack']

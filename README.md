@@ -1,5 +1,5 @@
 # Factory Design Pattern
-This design pattern generates an instance for client without exposing any instantiation logic to the client.
+This design pattern generates an instance for the client without exposing any instantiation logic.
 
 ## Why Use The Factory Method
 * Allows the consumer to create new objects without having to know the details of their dependencies or how they're created. The consumer only needs to give a top level request of the object needed.
@@ -24,7 +24,7 @@ $Triangle = new Polygon(
 );
 ```
 
-This demonstrates a concrete class, ```Polygon``` which can have various attributes and these attributes define the type of a polygon which will be created. This example assumes that Polygon has a constructor that takes arguments to designate the specific type. This is not bad practice, but is not easily readible if the codebase is new to the developer. This example is also very basic and most real-world applications will be more complex and rely on more than five attributes to define an object.
+This demonstrates a concrete class, ```Polygon```, which can have various attributes and these attributes define the type of a polygon which will be created. This example assumes that ```Polygon``` has a constructor that takes arguments to designate the specific type. This is not bad practice, but is not easily readable if the codebase is new to the developer. This example is also very basic and most real-world applications will be more complex and rely on more than five attributes to define an object.
 
 Another example may be an empty constructor and attributes will need to be defined later.
 
@@ -54,4 +54,16 @@ composer install
 
 ```
 vendor/bin/phpunit
+```
+
+## Python
+
+This example demonstrates how to create a ```cat``` and ```dog``` object that both have the ability to ```speak```, but performed in different ways.
+
+```python
+Factory = AnimalFactory()
+Cat = Factory.CreateCat()
+Dog = Factory.CreateDog()
+Cat.Speak()
+Dog.Speak()
 ```

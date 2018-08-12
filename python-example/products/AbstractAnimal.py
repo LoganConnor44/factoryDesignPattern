@@ -6,5 +6,9 @@ class AbstractAnimal(metaclass=abc.ABCMeta):
     """
 
     @abc.abstractmethod
-    def Speak(self):
+    def Speak(self) :
+        pass
+
+    @abc.abstractmethod
+    def Description(self) :
         pass
