@@ -104,7 +104,7 @@ vendor/bin/phpunit
 
 This example demonstrates how to create defined animals. The animals are defined in a definitions file, also shown below.
 
-### python-example/main.py
+##### python-example/main.py
 ```python
 mammalFactory = MammalFactory()
 fishFactory = FishFactory()
@@ -123,7 +123,7 @@ for creature in allCreatures :
     print()
 ```
 
-### python-example/definitions/available-products.json
+##### python-example/definitions/available-products.json
 ```json
 {
     "mammal" : {
