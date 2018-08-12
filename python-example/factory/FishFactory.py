@@ -13,7 +13,7 @@ class FishFactory(AbstractAnimalFactory) :
     def CreateMagikarp(self) :
         magi = Magikarp()
         magi.Setup()
-        return Cat()
+        return magi
 
     def CreateAllKnownFish(self) :
         fishes = []

@@ -6,7 +6,7 @@ Provide an interface for creating families of related or dependent
 objects without specifying their concrete classes.
 """
 def main():
-
+    # give breathing room for terminal
     print()
 
     mammalFactory = MammalFactory()
@@ -15,7 +15,7 @@ def main():
     Mammals = mammalFactory.CreateAllKnownMammals()
     Fishes = fishFactory.CreateAllKnownFish()
 
-    #merge the lists rather than creating one parent and two children
+    # merge the lists
     allCreatures = Mammals + Fishes
 
     for creature in allCreatures :

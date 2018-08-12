@@ -1,4 +1,7 @@
-import abc, json
+import abc
+import json
+import os
+import sys
 
 class AbstractAnimalFactory(metaclass=abc.ABCMeta) :
     """
@@ -7,5 +10,6 @@ class AbstractAnimalFactory(metaclass=abc.ABCMeta) :
     """
 
     def __init__(self) :
-        with open('./definitions/available-products.json') as definitions:
+        pathOfMain = os.path.dirname(os.path.dirname(__file__))
+        with open(pathOfMain + '/definitions/available-products.json') as definitions:
             self.allDefinitions = json.load(definitions)
