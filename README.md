@@ -4,7 +4,7 @@ This design pattern generates an instance for the client without exposing any in
 ## Why Use The Factory Method
 * Allows the consumer to create new objects without having to know the details of their dependencies or how they're created. The consumer only needs to give a top level request of the object needed.
 
-## Real-World Example
+## Real-World Analogy
 * You are purchasing furniture for a new home. Normally people do not create the furniture from scratch, but go to a store(factory) and purchase a product. This is the same concept. This pattern allows the client to request an object without being concerned with all the nails, lumber, or paint that may be involved.
 
 # Various Languages
@@ -30,6 +30,9 @@ This design pattern generates an instance for the client without exposing any in
     ├── Square.php
     └── Triangle.php
 ```
+
+### UML Diagram
+[Click Here](http://htmlpreview.github.io/?https://github.com/LoganConnor44/factoryDesignPattern/blob/master/php-example/php-example.html)
 
 ### Code Examples
 
@@ -152,7 +155,7 @@ for creature in allCreatures :
 }
 ```
 
-This result in the following being printed to the terminal:
+This results in the following being printed to the terminal:
 
 ```bash
 loganconnor44@Logans-MacBook-Pro ~/Documents/workspace/factoryDesignPattern (master)

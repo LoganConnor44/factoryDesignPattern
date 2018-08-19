@@ -8,6 +8,7 @@ class Square extends Polygon {
 
 	/**
 	 * 
+	 */
 	public function __construct(array $config) {
 		parent::__construct($config);
 	}
