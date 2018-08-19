@@ -1,0 +1,11 @@
+/Users/loganconnor44/Documents/workspace/factoryDesignPattern/csharp-example/bin/Debug/netcoreapp2.1/csharp-example.deps.json
+/Users/loganconnor44/Documents/workspace/factoryDesignPattern/csharp-example/bin/Debug/netcoreapp2.1/csharp-example.runtimeconfig.json
+/Users/loganconnor44/Documents/workspace/factoryDesignPattern/csharp-example/bin/Debug/netcoreapp2.1/csharp-example.runtimeconfig.dev.json
+/Users/loganconnor44/Documents/workspace/factoryDesignPattern/csharp-example/bin/Debug/netcoreapp2.1/csharp-example.dll
+/Users/loganconnor44/Documents/workspace/factoryDesignPattern/csharp-example/bin/Debug/netcoreapp2.1/csharp-example.pdb
+/Users/loganconnor44/Documents/workspace/factoryDesignPattern/csharp-example/obj/Debug/netcoreapp2.1/csharp-example.csprojAssemblyReference.cache
+/Users/loganconnor44/Documents/workspace/factoryDesignPattern/csharp-example/obj/Debug/netcoreapp2.1/csharp-example.csproj.CoreCompileInputs.cache
+/Users/loganconnor44/Documents/workspace/factoryDesignPattern/csharp-example/obj/Debug/netcoreapp2.1/csharp-example.AssemblyInfoInputs.cache
+/Users/loganconnor44/Documents/workspace/factoryDesignPattern/csharp-example/obj/Debug/netcoreapp2.1/csharp-example.AssemblyInfo.cs
+/Users/loganconnor44/Documents/workspace/factoryDesignPattern/csharp-example/obj/Debug/netcoreapp2.1/csharp-example.dll
+/Users/loganconnor44/Documents/workspace/factoryDesignPattern/csharp-example/obj/Debug/netcoreapp2.1/csharp-example.pdb
